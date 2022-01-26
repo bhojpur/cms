@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Stylesheets -->
+    {{stylesheet_tag "bhojpur_admin_default"}}
+    {{load_admin_stylesheets}}
+    {{load_theme_stylesheets}}
+    {{javascript_tag "vendors"}}
+  </head>
+
+  <body class="bhojpur-theme-slideout" style="background-color: rgba(0, 0, 0, 0.5);border:none;">
+    <a style="display:none;" data-url="" class="js-widget-edit-link">{{t "bhojpur_widget.form.edit" "Edit Widget"}}</a>
+
+    <!-- JavaScripts -->
+    <script>
+      BHOJPUR_Translations = window.BHOJPUR_Translations || {};
+      BHOJPUR_Translations.okButton = '{{t "bhojpur_admin.form.ok" "OK"}}'
+      BHOJPUR_Translations.cancelButton = '{{t "bhojpur_admin.form.cancel" "Cancel"}}'
+      BHOJPUR_Translations.serverError = '{{t "bhojpur_admin.form.serverError" "Server error, please try again later!"}}'
+      BHOJPUR_Translations.slideoutCloseWarning = '{{t "bhojpur_admin.slideout.close_warning" "You have unsaved changes on this slideout. If you close this slideout, you will lose all unsaved changes. Are you sure you want to close the slideout?"}}'
+    </script>
+    {{javascript_tag "bhojpur_admin_default"}}
+    {{load_admin_javascripts}}
+    {{load_theme_javascripts}}
+
+    <script type="text/javascript">
+      $(document).ready(function(){
+
+          function closeWidgetEditBox() {
+            setTimeout(function() {
+              window.parent.document.getElementById('bhojpur-widget-iframe').classList.remove("show");
+              window.parent.document.querySelector('body').classList.remove("open-widget-editor");
+            }, 350);
+          }
+
+          $(document).on('bottomsheetSubmitComplete.bhojpur.bottomsheets', function(){
+            closeWidgetEditBox();
+          })
+          // Reload parent window when click form submitted
+          $('.bhojpur-slideout').on('slideoutSubmitComplete.bhojpur.slideout' , function() {
+            setTimeout(function() {
+              parent.window.location.reload();
+            }, 300);
+          }).on('slideoutClosed.bhojpur.slideout', function(){
+            closeWidgetEditBox();
+          });
+
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,17 @@
+{
+    "name": "bhojpur-cms",
+    "description": "An enterprise-grade Content Management System for distributed enterprise.",
+    "version": "0.0.1",
+    "main": "pkg/webui/views/assets/javascripts/app.js",
+    "license": "MIT",
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/bhojpur/cms.git"
+    },
+    "keywords": ["bhojpur", "cms", "dashboard"],
+    "devDependencies": {
+        "@babel/core": "^7.3.4",
+        "@babel/preset-env": "^7.3.4",
+        "gulp-babel": "8.0.0"
+    }
+}

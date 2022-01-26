@@ -1,0 +1,6 @@
+export TEST_DB=postgres
+
+export DB_USER=bhojpur
+export DB_PWD=bhojpur
+export DB_NAME=bhojpur_sorting_test
+export DB_HOST=postgres

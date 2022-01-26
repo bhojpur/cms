@@ -1,0 +1,57 @@
+{{$result := .Result}}
+{{$resource := .Resource}}
+{{$context := .}}
+
+{{$actions := load_actions "new"}}
+{{if $actions}}
+  <div class="bhojpur-page__header">{{$actions}}</div>
+{{end}}
+
+<div class="bhojpur-page__body bhojpur-page__edit">
+  {{render "shared/flashes"}}
+  {{render "shared/errors"}}
+
+  <div class="bhojpur-form-container">
+    <form class="bhojpur-form" action="{{url_for $result $resource}}" method="POST" enctype="multipart/form-data" data-action-url="{{join_url (url_for $result $resource) "!setting"}}">
+
+      <div class="bhojpur-layout__widget bhojpur-layout__widget-new" data-toggle="bhojpur.widget">
+        <ul class="bhojpur-slideout__lists">
+          {{$groupWidgets := widget_grouped_widgets $context}}
+          {{range $groupWidget := $groupWidgets}}
+            <li>
+              {{if $groupWidget.Group}}
+                <h5 class="bhojpur-slideout__lists-groupname">{{t (printf "bhojpur_widgets.group.%v" $groupWidget.Group) $groupWidget.Group}}</h5>
+              {{else if (gt (len $groupWidgets) 1)}}
+                <h5 class="bhojpur-slideout__lists-groupname">{{t "bhojpur_widgets.group.other" "Other"}}</h5>
+              {{end}}
+
+              <div class="bhojpur-slideout__lists-item">
+                {{range $widget := $groupWidget.Widgets}}
+                  <a href="{{patch_url (join_url (url_for $resource) "!setting") "widget_type" $widget.Name}}" data-widget-type="{{$widget.Name}}" data-widget-name="{{$widget.Name}}" class="bhojpur-widget__new">
+                    {{if $widget.PreviewIcon}}
+                      <img src="{{$widget.PreviewIcon}}">
+                    {{end}}
+                    <span>{{$widget.Name}}</span>
+                  </a>
+                {{end}}
+              </div>
+            </li>
+          {{end}}
+        </ul>
+
+        <div class="bhojpur-layout__widget-selector" style="display: none;">
+          <h5 class="bhojpur-layout__widget-name"></h5>
+          {{render_form $result new_sections}}
+        </div>
+        <div class="bhojpur-layout__widget-setting"></div>
+
+        {{if has_update_permission $resource}}
+          <div class="bhojpur-form__actions bhojpur-layout__widget-actions" style="display: none;">
+            <button class="mdl-button mdl-button--colored mdl-button--raised mdl-js-button bhojpur-button--save" type="submit">{{t "bhojpur_admin.form.save" "Save"}}</button>
+            <a class="mdl-button mdl-button--primary mdl-js-button bhojpur-widget__cancel" href="javascript://">{{t "bhojpur_admin.form.cancel" "Cancel"}}</a>
+          </div>
+        {{end}}
+      </div>
+    </form>
+  </div>
+</div>

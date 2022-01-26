@@ -1,0 +1,64 @@
+.bhojpur-slideout__lists{
+    margin:24px 0;
+    padding:0
+}
+.bhojpur-slideout__lists .bhojpur-slideout__lists-groupname{
+    font-size:16px
+}
+.bhojpur-slideout__lists li{
+    list-style:none;
+    padding:0;
+    margin:12px 0
+}
+.bhojpur-slideout__lists .bhojpur-slideout__lists-item img{
+    max-width:100%;
+    box-shadow:1px 0 6px rgba(0,0,0,.2);
+    margin:0 auto 8px;
+    display:block
+}
+.bhojpur-slideout__lists .bhojpur-slideout__lists-item>a{
+    display:inline-block;
+    vertical-align:top;
+    padding:8px;
+    border-radius:2px;
+    width:27%;
+    color:rgba(0,0,0,.75);
+    margin-right:2%;
+    margin-bottom:24px;
+    text-align:center
+}
+.bhojpur-slideout__lists .bhojpur-slideout__lists-item>a:hover{
+    background-color:rgba(0,0,0,.04)
+}
+.bhojpur-slideout__lists .bhojpur-slideout__lists-item>a::nth-child(3n){
+    margin-right:0
+}
+.bhojpur-layout__widget-new .bhojpur-layout__widget-selector{
+    margin-top:-20px
+}
+.bhojpur-layout__widget-new .bhojpur-layout__widget-selector+[data-section-title=Settings]{
+    display:none
+}
+.bhojpur-layout__widget-new .bhojpur-layout__widget-selector .bhojpur-layout__widget-name{
+    padding-top:16px;font-size:20px;font-weight:600
+}
+.bhojpur-bottomsheets__body .bhojpur-layout__widget-selector .bhojpur-layout__widget-name{
+    padding-top:0;margin:0
+}
+.bhojpur-bottomsheets__body .bhojpur-layout__widget-new{
+    padding:0 24px 0 41px
+}
+.bhojpur-bottomsheets__body .bhojpur-slideout__lists .bhojpur-slideout__lists-item>a{
+    width:43%
+}
+.bhojpur-theme-widget .bhojpur-table__content{
+    max-height:none
+}
+.bhojpur-theme-widget .mdl-data-table tbody tr, .bhojpur-theme-widget .mdl-data-table td{
+    height:auto
+}
+.bhojpur-theme-widget .bhojpur-table img.bhojpur-preview-icon {
+    height:auto!important;
+    max-height:100px!important;
+    max-width:70px!important
+}

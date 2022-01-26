@@ -61,8 +61,8 @@ var rootCmdOpts struct {
 
 // rootCmd represents the base command when called without any subcommands
 var rootCmd = &cobra.Command{
-	Use:   "cms",
-	Short: "Bhojpur CMS is a content management system powered by Kubernetes",
+	Use:   "cmsctl",
+	Short: "Bhojpur CMS is a distributed enterprise content management system controller",
 	PersistentPreRun: func(cmd *cobra.Command, args []string) {
 		if verbose {
 			log.SetLevel(log.DebugLevel)

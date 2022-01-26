@@ -1,0 +1,9 @@
+{{if (and (not (eq global_locale (current_locale .))) (eq (.Context.Request.URL.Query.Get "sorting") ""))}}
+<div class="bhojpur-actions bhojpur-actions__locale bhojpur-bottomsheet__filter" data-toggle="bhojpur.filter">
+  {{$locale_mode := .Context.Request.URL.Query.Get "locale_mode"}}
+  <select class="bhojpur-action--select" data-toggle="bhojpur.selector" data-clearable="true" name="locale_mode" placeholder="{{t "bhojpur_admin.actions.query_mode" "Query Mode"}}">
+    <option value="locale" {{if (eq $locale_mode "locale")}}selected{{end}}>{{t "bhojpur_admin.actions.localized" "Localized"}}</option>
+    <option value="reverse" {{if (eq $locale_mode "reverse")}}selected{{end}}>{{t "bhojpur_admin.actions.not_localized" "Not Localized"}}</option>
+  </select>
+</div>
+{{end}}
