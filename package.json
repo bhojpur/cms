@@ -1,17 +1,35 @@
 {
     "name": "bhojpur-cms",
     "description": "An enterprise-grade Content Management System for distributed enterprise.",
-    "version": "0.0.1",
+    "version": "0.0.3",
     "main": "pkg/webui/views/assets/javascripts/app.js",
     "license": "MIT",
     "repository": {
         "type": "git",
         "url": "https://github.com/bhojpur/cms.git"
     },
+    "author": {
+      "name": "Shashi Bhushan Rai",
+      "email": "info@bhojpur-consulting.com",
+      "url": "https://www.bhojpur-consulting.com"
+    },
     "keywords": ["bhojpur", "cms", "dashboard"],
     "devDependencies": {
-        "@babel/core": "^7.3.4",
-        "@babel/preset-env": "^7.3.4",
-        "gulp-babel": "8.0.0"
-    }
+        "@babel/core": "^7.16.12",
+        "@babel/preset-env": "^7.16.11",
+        "event-stream": "4.0.1",
+        "gulp": "^4.0.2",
+        "gulp-autoprefixer": "^8.0.0",
+        "gulp-babel": "8.0.0",
+        "gulp-clean-css": "^4.3.0",
+        "gulp-concat": "^2.6.1",
+        "gulp-eslint": "^6.0.0",
+        "gulp-plumber": "^1.2.1",
+        "gulp-rename": "^2.0.0",
+        "gulp-sass": "5.1.0",
+        "gulp-uglify": "^3.0.2"
+      },
+      "dependencies": {
+        "gulp-cli": "^2.3.0"
+      }
 }

@@ -1,0 +1,25 @@
+language: go
+go:
+  - "1.17"
+
+services:
+  - mysql
+  - postgresql
+
+env:
+  - GO111MODULE=on
+
+before_install:
+  - mysql -e "CREATE DATABASE IF NOT EXISTS bhojpur_test;"
+  - mysql -e "GRANT ALL PRIVILEGES ON bhojpur_test.* TO 'bhojpur'@'localhost' IDENTIFIED BY 'bhojpur'"
+  - psql -c 'create database bhojpur_test;' -U postgres
+  - psql -c "CREATE USER bhojpur WITH ENCRYPTED PASSWORD 'bhojpur'" -U postgres
+  - psql -c "GRANT ALL PRIVILEGES ON DATABASE bhojpur_test TO bhojpur" -U postgres
+  - go get -t -v ./...
+
+script:
+  - go get -u github.com/goware/modvendor
+  - go mod vendor
+  - modvendor -copy="**/*.html **/*.js **/*.css **/*.tmpl **/*.ttf **/*.woff **/*.woff2" -v
+  - TEST_DB=postgres go test -v ./...
+  - TEST_DB=mysql go test -v ./...
