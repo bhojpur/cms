@@ -4,7 +4,7 @@ The Serializable Meta allows the developer to specify, for a given Model, a cust
 
 ## Usage
 
-The example herein shows how to manage different kinds of background jobs using https://github.com/bhojpur/cms/pkg/serializable_meta.
+The example herein shows how to manage different kinds of background jobs using [Serializable Meta](https://github.com/bhojpur/cms/pkg/serializable_meta).
 
 ### Define serializable model
 
@@ -12,7 +12,7 @@ Define `BhojpurJob` model and embed `serializable_meta.SerializableMeta` to appl
 
 ```go
 type BhojpurJob struct {
-  gorm.Model
+  orm.Model
   Name string
   serializable_meta.SerializableMeta
 }

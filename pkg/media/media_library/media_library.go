@@ -194,7 +194,7 @@ func (mediaLibraryStorage MediaLibraryStorage) ConfigureBhojpurMeta(metaor resou
 }
 
 type MediaBox struct {
-	Values string `json:"-" gorm:"size:4294967295;"`
+	Values string `json:"-" orm:"size:4294967295;"`
 	Files  []File `json:",omitempty"`
 }
 

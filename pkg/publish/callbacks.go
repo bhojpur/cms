@@ -56,10 +56,10 @@ func setTableAndPublishStatus(ensureDraftMode bool) func(*orm.Scope) {
 					if _, ok := scope.DB().Get(publishEvent); ok {
 						scope.InstanceSet("publish:creating_publish_event", true)
 					} else {
-						if attrs, ok := scope.InstanceGet("gorm:update_attrs"); ok {
+						if attrs, ok := scope.InstanceGet("orm:update_attrs"); ok {
 							updateAttrs := attrs.(map[string]interface{})
 							updateAttrs["publish_status"] = DIRTY
-							scope.InstanceSet("gorm:update_attrs", updateAttrs)
+							scope.InstanceSet("orm:update_attrs", updateAttrs)
 						} else {
 							scope.SetColumn("PublishStatus", DIRTY)
 						}
@@ -73,7 +73,7 @@ func setTableAndPublishStatus(ensureDraftMode bool) func(*orm.Scope) {
 func syncCreateFromProductionToDraft(scope *orm.Scope) {
 	if !scope.HasError() {
 		if ok, clone := isProductionModeAndNewScope(scope); ok {
-			scope.DB().Callback().Create().Get("gorm:create")(clone)
+			scope.DB().Callback().Create().Get("orm:create")(clone)
 		}
 	}
 }
@@ -81,13 +81,13 @@ func syncCreateFromProductionToDraft(scope *orm.Scope) {
 func syncUpdateFromProductionToDraft(scope *orm.Scope) {
 	if !scope.HasError() {
 		if ok, clone := isProductionModeAndNewScope(scope); ok {
-			if updateAttrs, ok := scope.InstanceGet("gorm:update_attrs"); ok {
+			if updateAttrs, ok := scope.InstanceGet("orm:update_attrs"); ok {
 				table := OriginalTableName(scope.TableName())
 				clone.Search = scope.Search
 				clone.Search.Table(table)
-				clone.InstanceSet("gorm:update_attrs", updateAttrs)
+				clone.InstanceSet("orm:update_attrs", updateAttrs)
 			}
-			scope.DB().Callback().Update().Get("gorm:update")(clone)
+			scope.DB().Callback().Update().Get("orm:update")(clone)
 		}
 	}
 }
@@ -95,7 +95,7 @@ func syncUpdateFromProductionToDraft(scope *orm.Scope) {
 func syncDeleteFromProductionToDraft(scope *orm.Scope) {
 	if !scope.HasError() {
 		if ok, clone := isProductionModeAndNewScope(scope); ok {
-			scope.DB().Callback().Delete().Get("gorm:delete")(clone)
+			scope.DB().Callback().Delete().Get("orm:delete")(clone)
 		}
 	}
 }
@@ -114,7 +114,7 @@ func deleteScope(scope *orm.Scope) {
 				))
 			scope.Exec()
 		} else {
-			scope.DB().Callback().Delete().Get("gorm:delete")(scope)
+			scope.DB().Callback().Delete().Get("orm:delete")(scope)
 		}
 	}
 }

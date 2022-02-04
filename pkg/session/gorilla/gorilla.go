@@ -27,7 +27,7 @@ import (
 	"net/http"
 
 	"github.com/bhojpur/application/pkg/utils"
-	session "github.com/bhojpur/session/pkg/engine"
+	session "github.com/bhojpur/cms/pkg/session"
 	gorillaContext "github.com/gorilla/context"
 	"github.com/gorilla/sessions"
 )

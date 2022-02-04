@@ -1,4 +1,4 @@
-# Media Library OSS
+# Bhojpur CMS - Media Library OSS
 
 Use [OSS](https://github.com/bhojpur/cms/pkg/oss) as backend to store medias
 
@@ -13,7 +13,7 @@ import (
 )
 
 type Product struct {
-	gorm.Model
+	orm.Model
 	Image oss.OSS
 }
 

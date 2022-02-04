@@ -23,9 +23,9 @@ package manager
 import (
 	"net/http"
 
+	session "github.com/bhojpur/cms/pkg/session"
 	"github.com/bhojpur/cms/pkg/session/gorilla"
 	middleware "github.com/bhojpur/middleware/pkg/engine"
-	session "github.com/bhojpur/session/pkg/engine"
 	"github.com/gorilla/sessions"
 )
 

@@ -51,23 +51,23 @@ func (bhojpursession BhojpurSession) getSession(w http.ResponseWriter, req *http
 // Add value to session data, if value is not string, will marshal it into JSON encoding and save it into session data.
 func (bhojpursession BhojpurSession) Add(w http.ResponseWriter, req *http.Request, key string, value interface{}) error {
 	sess, _ := bhojpursession.getSession(w, req)
-	defer sess.SessionRelease(w)
+	defer sess.SessionRelease(req.Context(), w)
 
 	if str, ok := value.(string); ok {
-		return sess.Set(key, str)
+		return sess.Set(req.Context(), key, str)
 	}
 	result, _ := json.Marshal(value)
-	return sess.Set(key, string(result))
+	return sess.Set(req.Context(), key, string(result))
 }
 
 // Pop value from session data
 func (bhojpursession BhojpurSession) Pop(w http.ResponseWriter, req *http.Request, key string) string {
 	sess, _ := bhojpursession.getSession(w, req)
-	defer sess.SessionRelease(w)
+	defer sess.SessionRelease(req.Context(), w)
 
-	result := sess.Get(key)
+	result := sess.Get(req.Context(), key)
 
-	sess.Delete(key)
+	sess.Delete(req.Context(), key)
 	if result != nil {
 		return fmt.Sprint(result)
 	}
@@ -78,7 +78,7 @@ func (bhojpursession BhojpurSession) Pop(w http.ResponseWriter, req *http.Reques
 func (bhojpursession BhojpurSession) Get(req *http.Request, key string) string {
 	sess, _ := bhojpursession.getSession(httptest.NewRecorder(), req)
 
-	result := sess.Get(key)
+	result := sess.Get(req.Context(), key)
 	if result != nil {
 		return fmt.Sprint(result)
 	}

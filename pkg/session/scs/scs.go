@@ -25,7 +25,7 @@ import (
 	"net/http"
 
 	"github.com/alexedwards/scs"
-	session "github.com/bhojpur/session/pkg/engine"
+	session "github.com/bhojpur/cms/pkg/session"
 )
 
 // New initialize session manager for SCS

@@ -14,7 +14,7 @@ func main() {
     ViewPaths:     []string{"app/new_view_path"},
     DefaultLayout: "application", // default value is application
     FuncMapMaker:  func(*Render, *http.Request, http.ResponseWriter) template.FuncMap {
-      // genereate FuncMap that could be used when render template based on request info
+      // generate FuncMap that could be used when render template based on request info
     },
   })
 }
