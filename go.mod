@@ -6,7 +6,7 @@ require (
 	github.com/bhojpur/application v0.0.2
 	github.com/bhojpur/drive v0.0.4
 	github.com/bhojpur/middleware v0.0.1
-	github.com/bhojpur/session v0.0.1
+	github.com/bhojpur/session v0.0.2
 	github.com/disintegration/imaging v1.6.2
 	github.com/fatih/color v1.13.0
 	github.com/gosimple/slug v1.12.0

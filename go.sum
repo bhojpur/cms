@@ -111,8 +111,8 @@ github.com/bhojpur/middleware v0.0.1 h1:7wTfFJARxA4YU5MYo1bHaJ9V5Ahk53YM5hrLvLop
 github.com/bhojpur/middleware v0.0.1/go.mod h1:16NozpurlR/cxC+RK9aq+QbmPGcg1ad0sjdEvEAzCkE=
 github.com/bhojpur/orm v0.0.1 h1:Y956JBjgGafPY+rv7NhIXZJ2EQFbiSFoK41Fmh2FTRU=
 github.com/bhojpur/orm v0.0.1/go.mod h1:bW6ohRjjQA79hWPvBfqdngjrT2AfJ2lYd/tsbBxr+HY=
-github.com/bhojpur/session v0.0.1 h1:rUHi8kqVu0djCGxwFJkuCp+k6bP+Yz75sxwaGr2F55s=
-github.com/bhojpur/session v0.0.1/go.mod h1:mVWQyEzB3PZsU1lR3sU4eH7SdoJiqEyuuT89kDYDBcA=
+github.com/bhojpur/session v0.0.2 h1:bfbAdr8NYKQ1TA+x+W+0O/7JwUrtY431g45eVqHK98o=
+github.com/bhojpur/session v0.0.2/go.mod h1:mVWQyEzB3PZsU1lR3sU4eH7SdoJiqEyuuT89kDYDBcA=
 github.com/bhojpur/token v0.0.1 h1:VxBUsnr432jF5NShTpqwAPLTU2yArp2DHIjqOw4L7/M=
 github.com/bhojpur/token v0.0.1/go.mod h1:qP76yFKy/RtGpoBzyaWPi8O2cT12nm5cdLioCjqP8g8=
 github.com/bketelsen/crypt v0.0.3-0.20200106085610-5cbc8cc4026c/go.mod h1:MKsuJmJgSg28kpZDP6UIiPt0e0Oz0kqKNGyRaWEPv84=
