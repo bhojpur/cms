@@ -1,0 +1,27 @@
+<div class="bhojpur-layout__sidebar">
+  <div class="sidebar-header">
+    {{t "bhojpur_admin.layout.logo" "<a href=\"{{.Prefix}}\"><span class=\"visuallyhidden\">Bhojpur CMS</span></a><a href=\"/\" target=\"_blank\">View Site <i class=\"material-icons md-14\" aria-hidden=\"true\">open_in_new</i></a>" .Admin.GetRouter}}
+  </div>
+  <div class="sidebar-userinfo">
+    {{if .CurrentUser}}
+      <div>
+        <h5>{{.CurrentUser.DisplayName}}</h5>
+      </div>
+    {{end}}
+    <a class="mdl-button mdl-js-button mdl-button--icon" href="{{logout_url}}" title="{{t "bhojpur_admin.account.logout" "logout"}}" alt="{{t "bhojpur_admin.account.logout" "logout"}}"><i class="material-icons">exit_to_app</i></a>
+  </div>
+  <div class="sidebar-body">
+    <div class="bhojpur-menu-container">
+      {{if .GetSearchableResources }}
+        <div bhojpur-icon-name="Search">
+          <span class="bhojpur-global-search--show {{if (eq .Action "search_center")}}active{{end}}" data-placeholder="{{t "bhojpur_admin.search_center.hint" "Search…"}}" data-action-url="{{search_center_path}}">{{t "bhojpur_admin.search_center.title" "Search Center" }}</span>
+        </div>
+      {{end}}
+
+      {{render "shared/menu" get_menus}}
+    </div>
+  </div>
+  <div class="sidebar-footer">
+    {{t "bhojpur_admin.layout.powered_by" "Powered by <a href=\"https://cms.bhojpur.net\" target=\"_blank\">Bhojpur CMS</a>"}}
+  </div>
+</div>

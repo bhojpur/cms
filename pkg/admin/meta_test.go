@@ -24,7 +24,7 @@ import (
 	"reflect"
 	"testing"
 
-	. "github.com/bhojpur/cms/tests/dummy"
+	. "github.com/bhojpur/cms/pkg/admin/tests/dummy"
 
 	appsvr "github.com/bhojpur/application/pkg/engine"
 	"github.com/bhojpur/application/pkg/resource"
@@ -190,7 +190,7 @@ func TestManyToManyMetaSetter(t *testing.T) {
 	// 	Meta:  meta,
 	// 	Value: []int{en.Id, cn.Id},
 	// }
-	// meta.Setter(userRecord, metaValue, &appsvr.Context{Config: &appsvr.Config{DB: db}})
+	// meta.Setter(userRecord, metaValue, &bhojpur.Context{Config: &bhojpur.Config{DB: db}})
 
 	// if len(userRecord.Languages) != 2 {
 	// 	t.Error("many to many resource's value doesn't set")
@@ -199,7 +199,7 @@ func TestManyToManyMetaSetter(t *testing.T) {
 
 func TestNestedField(t *testing.T) {
 	profileModel := Profile{
-		Name:  "Bhojpur",
+		Name:  "Pramila",
 		Sex:   "Female",
 		Phone: Phone{Num: "1024"},
 	}
@@ -233,7 +233,7 @@ func TestNestedField(t *testing.T) {
 		Values: []*resource.MetaValue{
 			{
 				Name:  "Profile.Name",
-				Value: "Bhojpur III",
+				Value: "Pramila III",
 				Meta:  profileNameMeta,
 			},
 			{

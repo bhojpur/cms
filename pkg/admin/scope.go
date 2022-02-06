@@ -25,7 +25,7 @@ import (
 	orm "github.com/bhojpur/orm/pkg/engine"
 )
 
-// Scope register scope for Bhojpur resource
+// Scope register scope for Bhojpur CMS resource
 func (res *Resource) Scope(scope *Scope) {
 	if scope.Label == "" {
 		scope.Label = scope.Name

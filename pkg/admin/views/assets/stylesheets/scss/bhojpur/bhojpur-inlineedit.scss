@@ -1,0 +1,144 @@
+[data-toggle="bhojpur.inlineEdit"] {
+    .bhojpur-field__show {
+        min-height: 24px;
+        max-width: 95%;
+
+        &.bhojpur-redactor__show {
+            background-color: #fff;
+            padding: 24px;
+            box-shadow: 0 2px 4px rgba(0,0,0,.1);
+            max-width: 100%;
+
+            .bhojpur-inlineedit__edit {
+                top: 10px;
+                right: 10px;
+            }
+        }
+
+        &:hover {
+            position: relative;
+        }
+    }
+
+    .bhojpur-fieldset {
+        .bhojpur-field.bhojpur-inlineedit__field {
+            background-color: #f5f5f5;
+            box-shadow: none;
+        }
+    }
+
+    .bhojpur-section-columns-2 {
+        .bhojpur-field.bhojpur-inlineedit__field:nth-child(odd) {
+            margin-right: 24px;
+            width: calc(50% - 24px);
+            padding-right: 8px;
+        }
+    }
+
+    .bhojpur-section-columns-3 {
+        .bhojpur-field.bhojpur-inlineedit__field {
+            margin-right: 12px;
+            width: calc(33.33% - 12px);
+            padding-right: 8px;
+
+            &:nth-child(3n) {
+                margin-right: 0;
+                width: 33.33%;
+            }
+        }
+    }
+
+    .bhojpur-inlineedit__field.bhojpur-field {
+        background-color: #fff;
+        position: relative;
+        margin-top: 8px;
+        padding: 16px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, .1);
+        margin-bottom: 16px;
+
+        .redactor-box {
+            box-shadow: none;
+            border: 1px solid rgba(0, 0, 0, .1);
+
+            .redactor-toolbar {
+                background-color: rgba(0, 0, 0, .02);
+            }
+        }
+
+        .bhojpur-field__show {
+            display: none !important;
+        }
+
+        .bhojpur-field__edit {
+            display: block !important;
+        }
+
+        .mdl-textfield {
+            padding: 30px 0 20px;
+        }
+    }
+
+    .bhojpur-inlineedit__edit {
+        width: 24px;
+        min-width: 24px;
+        height: 24px;
+        line-height: 24px;
+        position: absolute;
+        bottom: auto !important;
+        margin-left: 16px;
+
+        i {
+            font-size: 16px;
+            font-style: normal;
+        }
+    }
+
+    .bhojpur-inlineedit__buttons {
+        margin-top: -10px;
+        text-align: right;
+    }
+
+    .bhojpur-field__selectmany-show {
+        > span {
+            display: inline-block;
+            display: inline-block;
+            padding: 4px 8px;
+            margin: 0 6px 6px 0;
+            font-size: 12px;
+            line-height: 1;
+            vertical-align: top;
+            background-color: #f8f9fa;
+            border: 1px solid #e0e1e2;
+            border-radius: 2px;
+        }
+    }
+
+    [data-toggle="bhojpur.variations"] {
+        .bhojpur-product__filter,
+        .bhojpur-product__property {
+            display: none;
+        }
+
+        table {
+            td:first-child,
+            th:first-child {
+                display: none;
+            }
+
+            .bhojpur-product__action {
+                display: none;
+            }
+        }
+    }
+
+    [data-toggle="bhojpur.mediabox"] {
+        .bhojpur-cropper__toggle,
+        [data-mediabox-url] {
+            display: none;
+        }
+
+        .bhojpur-field__edit {
+            display: block;
+        }
+    }
+}

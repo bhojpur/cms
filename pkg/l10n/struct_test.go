@@ -29,7 +29,7 @@ import (
 )
 
 type Product struct {
-	ID              int    `gorm:"primary_key"`
+	ID              int    `orm:"primary_key"`
 	Code            string `l10n:"sync"`
 	Quantity        uint   `l10n:"sync"`
 	Name            string
@@ -37,40 +37,40 @@ type Product struct {
 	ColorVariations []ColorVariation
 	BrandID         uint `l10n:"sync"`
 	Brand           Brand
-	Tags            []Tag      `gorm:"many2many:product_tags"`
-	Categories      []Category `gorm:"many2many:product_categories;ForeignKey:id;AssociationForeignKey:id"`
+	Tags            []Tag      `orm:"many2many:product_tags"`
+	Categories      []Category `orm:"many2many:product_categories;ForeignKey:id;AssociationForeignKey:id"`
 	l10n.Locale
 }
 
 // func (Product) LocaleCreatable() {}
 
 type ColorVariation struct {
-	ID       int `gorm:"primary_key"`
+	ID       int `orm:"primary_key"`
 	Quantity int
 	Color    Color
 }
 
 type Color struct {
-	ID   int `gorm:"primary_key"`
+	ID   int `orm:"primary_key"`
 	Code string
 	Name string
 	l10n.Locale
 }
 
 type Brand struct {
-	ID   int `gorm:"primary_key"`
+	ID   int `orm:"primary_key"`
 	Name string
 	l10n.Locale
 }
 
 type Tag struct {
-	ID   int `gorm:"primary_key"`
+	ID   int `orm:"primary_key"`
 	Name string
 	l10n.Locale
 }
 
 type Category struct {
-	ID   int `gorm:"primary_key"`
+	ID   int `orm:"primary_key"`
 	Name string
 	l10n.Locale
 }

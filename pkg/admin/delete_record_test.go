@@ -26,7 +26,7 @@ import (
 	"net/url"
 	"testing"
 
-	. "github.com/bhojpur/cms/tests/dummy"
+	. "github.com/bhojpur/cms/pkg/admin/tests/dummy"
 )
 
 func TestDeleteRecord(t *testing.T) {

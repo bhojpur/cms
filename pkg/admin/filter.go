@@ -59,7 +59,7 @@ type FilterArgument struct {
 	Context  *appsvr.Context
 }
 
-// Filter register filter for CMS resource
+// Filter register filter for Bhojpur CMS resource
 func (res *Resource) Filter(filter *Filter) {
 	filter.Resource = res
 

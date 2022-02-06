@@ -66,9 +66,9 @@ cancellEvent.To("paid_cancelled").From("paid").After(func(order interface{}, tx 
 ### Trigger an Event
 
 ```go
-// func (*StateMachine) Trigger(name string, value Stater, tx *gorm.DB, notes ...string) error
+// func (*StateMachine) Trigger(name string, value Stater, tx *orm.DB, notes ...string) error
 OrderStatemachine.Trigger("paid", &order, db, "charged offline by Bhojpur")
-// notes will be used to generate state change logs when works with GORM
+// notes will be used to generate state change logs when works with ORM
 
 // When using without Bhojpur ORM, just pass nil to the db, like
 OrderStatemachine.Trigger("cancel", &order, nil)
@@ -92,7 +92,7 @@ order.SetState("finished") // this will only update order's state, won't save it
 
 ## State change logs
 
-When working with GORM, `Transition` will store all state change logs in the database. Use `GetStateChangeLogs` to get those logs.
+When working with ORM, `Transition` will store all state change logs in the database. Use `GetStateChangeLogs` to get those logs.
 
 ```go
 // create the table used to store logs first

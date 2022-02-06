@@ -41,7 +41,7 @@ type MetaConfigInterface interface {
 
 // Meta meta struct definition
 type Meta struct {
-	*Meta
+	*resource.Meta
 	Name            string
 	FieldName       string
 	Label           string
@@ -318,9 +318,9 @@ func (meta *Meta) configure() {
 		}
 	}
 
-	// run meta configors
+	// run meta configures
 	if baseResource := meta.baseResource; baseResource != nil {
-		for key, fc := range baseResource.GetAdmin().metaConfigorMaps {
+		for key, fc := range baseResource.GetAdmin().metaConfigureMaps {
 			if key == meta.Type {
 				fc(meta)
 			}

@@ -49,7 +49,7 @@ type Config struct {
 	PageCount  int
 }
 
-// Resource is the most important thing for CMS admin, every model is defined as a resource, CMS admin will genetate management interface based on its definition
+// Resource is the most important thing for Bhojpur CMS - Admin, every model is defined as a resource, Bhojpur CMS - Admin will genetate management interface based on its definition
 type Resource struct {
 	*resource.Resource
 	Config         *Config
@@ -164,7 +164,7 @@ func (res *Resource) GetTheme(name string) ThemeInterface {
 	return nil
 }
 
-// NewResource initialize a new CMS resource, won't add it to admin, just initialize it
+// NewResource initialize a new Bhojpur resource, won't add it to admin, just initialize it
 func (res *Resource) NewResource(value interface{}, config ...*Config) *Resource {
 	subRes := res.GetAdmin().newResource(value, config...)
 	subRes.ParentResource = res
@@ -576,7 +576,7 @@ func (res *Resource) SearchAttrs(columns ...string) []string {
 		}
 
 		if len(columns) > 0 {
-			res.SearchHandler = func(keyword string, context *Context) *orm.DB {
+			res.SearchHandler = func(keyword string, context *appsvr.Context) *orm.DB {
 				var filterFields []filterField
 				for _, column := range columns {
 					filterFields = append(filterFields, filterField{FieldName: column})

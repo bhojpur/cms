@@ -1,0 +1,33 @@
+.bhojpur-section {
+    margin: 24px;
+    &.bhojpur-section__table {
+        margin: 24px 0;
+        .bhojpur-section__header {
+            margin-left: 24px;
+        }
+    }
+    >.bhojpur-table-container {
+        margin: 0;
+    }
+}
+
+.bhojpur-section__header {
+    margin-bottom: 8px;
+}
+
+.bhojpur-section-title {
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 8px;
+    margin-top: 32px;
+    color: unquote("rgba(#{$color-black}, 0.68)");
+}
+
+.bhojpur-section__col {
+    margin-bottom: 32px;
+    .bhojpur-section-title {
+        font-size: 16px;
+        margin-top: 16px;
+        padding-left: 24px;
+    }
+}

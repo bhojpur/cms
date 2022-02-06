@@ -1,0 +1,24 @@
+// Buttons
+// --------------------------------------------------
+.bhojpur-button--small {
+    height: 32px;
+    line-height: 32px;
+}
+
+.bhojpur-button--new,
+.bhojpur-button--edit {
+    position: fixed;
+    right: 32px;
+    bottom: 32px;
+    z-index: 3;
+    @include shadow-4dp();
+}
+
+.bhojpur-button--accent {
+    color: #fff;
+    background-color: unquote("rgb(#{$color-accent})") !important;
+}
+
+.bhojpur-button--muted {
+    color: unquote("rgba(#{$color-black}, 0.54)");
+}

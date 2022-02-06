@@ -28,7 +28,7 @@ import (
 
 	bhojpurTestUtils "github.com/bhojpur/application/test/utils"
 	"github.com/bhojpur/cms/pkg/admin"
-	. "github.com/bhojpur/cms/tests/dummy"
+	. "github.com/bhojpur/cms/pkg/admin/tests/dummy"
 	orm "github.com/bhojpur/orm/pkg/engine"
 	"github.com/bhojpur/orm/pkg/now"
 	"github.com/theplant/testingutils"
@@ -51,7 +51,7 @@ func TestJSONTransformerEncode(t *testing.T) {
 			Result: &User{
 				Active:       true,
 				Model:        orm.Model{ID: 1},
-				Name:         "bhojpur",
+				Name:         "pramila",
 				Role:         "admin",
 				RegisteredAt: &registeredAt,
 				CreditCard: CreditCard{
@@ -59,7 +59,7 @@ func TestJSONTransformerEncode(t *testing.T) {
 					Issuer: "visa",
 				},
 				Profile: Profile{
-					Name: "bhojpur",
+					Name: "pramila",
 					Phone: Phone{
 						Num: "110",
 					},
@@ -89,10 +89,10 @@ func TestJSONTransformerEncode(t *testing.T) {
         },
         "ID": 1,
         "Languages": null,
-        "Name": "bhojpur",
+        "Name": "pramila",
         "Profile": {
                 "ID": 0,
-                "Name": "bhojpur",
+                "Name": "pramila",
                 "Phone": {
                         "ID": 0,
                         "Num": "110"

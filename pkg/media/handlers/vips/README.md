@@ -1,12 +1,14 @@
-# ENV
+# Bhojpur CMS - VIPs Handler
 
-### dev env
+## Dev Environment
+
 ```brew install vips```
 
 export CGO_CFLAGS_ALLOW="-Xpreprocessor"
 
 
-### build Dockerfile
+## Build Dockerfile
+
 ```
 FROM alpine:3.12
 
@@ -14,14 +16,14 @@ RUN apk add --update go gcc g++ git
 
 RUN apk add --update build-base vips-dev
 ```
-### build command
+## Build Command
 
 set CGO_ENABLED=1, eg:
 ```
 GOOS=linux CGO_ENABLED=1 GOARCH=amd64 go build -tags 'bindatafs' -a -o main main.go
 ```
 
-### deploy Dockerfile
+## Deploy Dockerfile
 
 ```
 FROM alpine:3.12
@@ -37,7 +39,7 @@ RUN apk --update upgrade && \
     rm -rf /var/cache/apk/*
 ```
  
-# Usage
+## Simple Usage
 
 [Setup media library](https://github.com/bhojpur/cms/pkg/media#how-to-setup-a-media-library-and-use-media-box) and add below code, then it will compress jpg/png and generate webp for you.
 
@@ -47,7 +49,7 @@ import "github.com/bhojpur/cms/pkg/media/handlers/vips"
 vips.UseVips(vips.Config{EnableGenerateWebp: true})
 ```
 
-you can adjust image quality by config if you want.
+You can adjust the image quality by config if you want.
 ```
 type Config struct {
 	EnableGenerateWebp bool

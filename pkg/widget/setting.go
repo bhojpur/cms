@@ -25,10 +25,10 @@ import (
 	"html/template"
 	"time"
 
+	appsvr "github.com/bhojpur/application/pkg/engine"
 	"github.com/bhojpur/application/pkg/resource"
 	"github.com/bhojpur/application/pkg/utils"
 	"github.com/bhojpur/cms/pkg/admin"
-	appsvr "github.com/bhojpur/cms/pkg/engine"
 	"github.com/bhojpur/cms/pkg/serializable_meta"
 	orm "github.com/bhojpur/orm/pkg/engine"
 )

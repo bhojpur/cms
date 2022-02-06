@@ -1,0 +1,15 @@
+<div class="bhojpur-form-section clearfix" data-section-title="{{.Title}}">
+  {{if .Title}}
+    <label class="bhojpur-field__label bhojpur-form-section-title">
+      {{t (printf "%v.form.sections.%v" .Section.Resource.ToParam .Title) .Title}}
+    </label>
+  {{end}}
+
+  <div {{if .Title}}class="bhojpur-fieldset"{{end}}>
+    {{range .Rows}}
+      <div class="bhojpur-form-section-rows bhojpur-section-columns-{{.Length}} clearfix">
+        {{.ColumnsHTML}}
+      </div>
+    {{end}}
+  </div>
+</div>

@@ -28,7 +28,6 @@ import (
 
 	appsvr "github.com/bhojpur/application/pkg/engine"
 	"github.com/bhojpur/application/pkg/resource"
-	ressvr "github.com/bhojpur/application/pkg/resource"
 	"github.com/bhojpur/application/pkg/utils"
 	"github.com/bhojpur/cms/pkg/render/assetfs"
 	"github.com/bhojpur/cms/pkg/session"
@@ -59,7 +58,7 @@ type Admin struct {
 	searchResources   []*Resource
 	router            *Router
 	funcMaps          template.FuncMap
-	metaConfigureMaps map[string]func(*ressvr.Meta)
+	metaConfigureMaps map[string]func(*Meta)
 }
 
 // New new admin with configuration
@@ -104,10 +103,8 @@ func New(config interface{}) *Admin {
 	return &admin
 }
 
-// SetSiteName set site's name, the name will be used as admin HTML title and admin
-// interface will auto load javascripts, stylesheets files based on its value
-// For example, if you named it as `Bhojpur Demo`, admin will look up `bhojpur_demo.js`,
-// `bhojpur_demo.css` in CMS view paths, and load them if found
+// SetSiteName set site's name, the name will be used as admin HTML title and admin interface will auto load javascripts, stylesheets files based on its value
+// For example, if you named it as `Bhojpur CMS Demo`, admin will look up `bhojpur_demo.js`, `bhojpur_demo.css` in Bhojpur CMS view paths, and load them if found
 func (admin *Admin) SetSiteName(siteName string) {
 	admin.SiteName = siteName
 }
@@ -214,7 +211,7 @@ func (admin *Admin) newResource(value interface{}, config ...*Config) *Resource 
 	return res
 }
 
-// NewResource initialize a new CMS resource, won't add it to admin, just initialize it
+// NewResource initialize a new Bhojpur CMS resource, won't add it to admin, just initialize it
 func (admin *Admin) NewResource(value interface{}, config ...*Config) *Resource {
 	res := admin.newResource(value, config...)
 	res.Config.Invisible = true

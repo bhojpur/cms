@@ -97,15 +97,15 @@ func beforeQuery(scope *orm.Scope) {
 	}
 }
 
-// RegisterCallbacks register callbacks into gorm db instance
+// RegisterCallbacks register callbacks into Bhojpur ORM DB instance
 func RegisterCallbacks(db *orm.DB) {
 	if db.Callback().Create().Get("sorting:initalize_position") == nil {
-		db.Callback().Create().Before("gorm:create").Register("sorting:initalize_position", initalizePosition)
+		db.Callback().Create().Before("orm:create").Register("sorting:initalize_position", initalizePosition)
 	}
 	if db.Callback().Delete().Get("sorting:reorder_positions") == nil {
-		db.Callback().Delete().After("gorm:after_delete").Register("sorting:reorder_positions", reorderPositions)
+		db.Callback().Delete().After("orm:after_delete").Register("sorting:reorder_positions", reorderPositions)
 	}
 	if db.Callback().Query().Get("sorting:sort_by_position") == nil {
-		db.Callback().Query().Before("gorm:query").Register("sorting:sort_by_position", beforeQuery)
+		db.Callback().Query().Before("orm:query").Register("sorting:sort_by_position", beforeQuery)
 	}
 }

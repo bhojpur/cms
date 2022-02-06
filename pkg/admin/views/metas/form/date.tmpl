@@ -1,0 +1,21 @@
+<div class="bhojpur-field">
+  <div class="mdl-textfield mdl-textfield--full-width mdl-js-textfield">
+    <label class="bhojpur-field__label mdl-textfield__label" for="{{.InputId}}">
+      {{meta_label .Meta}}
+    </label>
+
+    <div class="bhojpur-field__show">
+      {{.Value}}
+    </div>
+
+    <div class="bhojpur-field__edit bhojpur-field__datepicker" data-picker-type="date">
+      <input class="mdl-textfield__input bhojpur-datepicker__input" placeholder="{{meta_placeholder .Meta .Context "YYYY-MM-DD"}}" type="text" id="{{.InputId}}" name="{{.InputName}}" value="{{.Value}}" {{if  (not (has_change_permission .Meta)) }} disabled{{end}}>
+
+      <div>
+        <button data-toggle="bhojpur.datepicker" class="mdl-button mdl-js-button mdl-button--icon bhojpur-action__datepicker" type="button">
+          <i class="material-icons">date_range</i>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

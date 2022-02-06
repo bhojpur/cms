@@ -32,7 +32,7 @@ import (
 	"strings"
 	"testing"
 
-	. "github.com/bhojpur/cms/tests/dummy"
+	. "github.com/bhojpur/cms/pkg/admin/tests/dummy"
 )
 
 func TestCreateRecord(t *testing.T) {
@@ -58,7 +58,7 @@ func TestCreateBelongsToRecord(t *testing.T) {
 	name := "create_belongs_to_record"
 	form := url.Values{
 		"BhojpurResource.Name":              {name},
-		"BhojpurResource.Role":              {"admin"},
+		"vResource.Role":                    {"admin"},
 		"BhojpurResource.CreditCard.Number": {"1234567890"},
 		"BhojpurResource.CreditCard.Issuer": {"Visa"},
 	}

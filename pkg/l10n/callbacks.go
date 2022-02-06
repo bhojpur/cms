@@ -121,7 +121,7 @@ func afterUpdate(scope *orm.Scope) {
 						var primaryField = scope.PrimaryField()
 						var syncAttrs = map[string]interface{}{}
 
-						if updateAttrs, ok := scope.InstanceGet("gorm:update_attrs"); ok {
+						if updateAttrs, ok := scope.InstanceGet("orm:update_attrs"); ok {
 							for key, value := range updateAttrs.(map[string]interface{}) {
 								for _, syncColumn := range syncColumns {
 									if syncColumn == key {
@@ -160,29 +160,29 @@ func beforeDelete(scope *orm.Scope) {
 	}
 }
 
-// RegisterCallbacks register callback into GORM DB
+// RegisterCallbacks register callback into Bhojpur ORM DB
 func RegisterCallbacks(db *orm.DB) {
 	callback := db.Callback()
 
 	if callback.Create().Get("l10n:before_create") == nil {
-		callback.Create().Before("gorm:before_create").Register("l10n:before_create", beforeCreate)
+		callback.Create().Before("orm:before_create").Register("l10n:before_create", beforeCreate)
 	}
 
 	if callback.Update().Get("l10n:before_update") == nil {
-		callback.Update().Before("gorm:before_update").Register("l10n:before_update", beforeUpdate)
+		callback.Update().Before("orm:before_update").Register("l10n:before_update", beforeUpdate)
 	}
 	if callback.Update().Get("l10n:after_update") == nil {
-		callback.Update().After("gorm:after_update").Register("l10n:after_update", afterUpdate)
+		callback.Update().After("orm:after_update").Register("l10n:after_update", afterUpdate)
 	}
 
 	if callback.Delete().Get("l10n:before_delete") == nil {
-		callback.Delete().Before("gorm:before_delete").Register("l10n:before_delete", beforeDelete)
+		callback.Delete().Before("orm:before_delete").Register("l10n:before_delete", beforeDelete)
 	}
 
 	if callback.RowQuery().Get("l10n:before_query") == nil {
-		callback.RowQuery().Before("gorm:row_query").Register("l10n:before_query", beforeQuery)
+		callback.RowQuery().Before("orm:row_query").Register("l10n:before_query", beforeQuery)
 	}
 	if callback.Query().Get("l10n:before_query") == nil {
-		callback.Query().Before("gorm:query").Register("l10n:before_query", beforeQuery)
+		callback.Query().Before("orm:query").Register("l10n:before_query", beforeQuery)
 	}
 }

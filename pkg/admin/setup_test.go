@@ -27,7 +27,7 @@ import (
 	"testing"
 
 	"github.com/bhojpur/cms/pkg/admin"
-	. "github.com/bhojpur/cms/tests/dummy"
+	. "github.com/bhojpur/cms/pkg/admin/tests/dummy"
 	orm "github.com/bhojpur/orm/pkg/engine"
 )
 

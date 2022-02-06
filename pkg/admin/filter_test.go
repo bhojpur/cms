@@ -30,7 +30,7 @@ import (
 
 	bhojpurTestUtils "github.com/bhojpur/application/test/utils"
 	"github.com/bhojpur/cms/pkg/admin"
-	. "github.com/bhojpur/cms/tests/dummy"
+	. "github.com/bhojpur/cms/pkg/admin/tests/dummy"
 )
 
 const FORMTYPE = "application/x-www-form-urlencoded"

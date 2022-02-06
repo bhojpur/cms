@@ -48,13 +48,13 @@ func (admin Admin) registerCompositePrimaryKeyCallback() {
 			},
 		})
 
-		callbackProc := db.Callback().Query().Before("gorm:query")
+		callbackProc := db.Callback().Query().Before("orm:query")
 		callbackName := "bhojpur_admin:composite_primary_key"
 		if callbackProc.Get(callbackName) == nil {
 			callbackProc.Register(callbackName, compositePrimaryKeyQueryCallback)
 		}
 
-		callbackProc = db.Callback().RowQuery().Before("gorm:row_query")
+		callbackProc = db.Callback().RowQuery().Before("orm:row_query")
 		if callbackProc.Get(callbackName) == nil {
 			callbackProc.Register(callbackName, compositePrimaryKeyQueryCallback)
 		}

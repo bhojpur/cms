@@ -1,0 +1,19 @@
+@media print {
+    header.mdl-layout__header,
+    .bhojpur-layout__sidebar,
+    .mdl-layout__drawer,
+    a.bhojpur-button--edit {
+        display: none;
+    }
+    .bhojpur-layout .mdl-layout__content {
+        overflow: initial;
+    }
+    .mdl-layout--fixed-drawer>.mdl-layout__content {
+        margin-left: 0;
+        padding-left: 0;
+    }
+    .mdl-layout {
+        display: block;
+        overflow: initial;
+    }
+}

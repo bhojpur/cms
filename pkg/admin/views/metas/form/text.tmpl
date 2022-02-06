@@ -1,0 +1,13 @@
+<div class="bhojpur-field">
+  <div class="mdl-textfield mdl-textfield--full-width mdl-js-textfield">
+    <label class="bhojpur-field__label" for="{{.InputId}}">
+      {{meta_label .Meta}}
+    </label>
+
+    <div class="bhojpur-field__show">{{.Value}}</div>
+
+    <div class="bhojpur-field__edit">
+      <textarea class="mdl-textfield__input bhojpur-js-autoheight" id="{{.InputId}}" name="{{.InputName}}" rows="1" {{if (not (has_change_permission .Meta)) }}disabled{{end}}>{{.Value}}</textarea>
+    </div>
+  </div>
+</div>

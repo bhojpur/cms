@@ -36,7 +36,7 @@ import (
 	appsvr "github.com/bhojpur/application/pkg/engine"
 	"github.com/bhojpur/application/pkg/resource"
 	bhojpurTestUtils "github.com/bhojpur/application/test/utils"
-	. "github.com/bhojpur/cms/tests/dummy"
+	. "github.com/bhojpur/cms/pkg/admin/tests/dummy"
 )
 
 func TestUpdateRecord(t *testing.T) {

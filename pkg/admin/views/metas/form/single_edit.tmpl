@@ -1,0 +1,14 @@
+{{$value := (raw_value_of .ResourceValue .Meta)}}
+{{if (or (not (is_new_record $value)) (has_create_permission .Meta))}}
+  <div class="single-edit bhojpur-field">
+    <label class="bhojpur-field__label" for="{{.InputId}}">
+      {{meta_label .Meta}}
+    </label>
+
+    <div class="bhojpur-field__block">
+      <fieldset id="{{.InputId}}" class="bhojpur-fieldset">
+        {{render_nested_form $value (edit_sections .Meta.Resource) -1}}
+      </fieldset>
+    </div>
+  </div>
+{{end}}

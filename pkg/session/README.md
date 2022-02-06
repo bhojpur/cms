@@ -7,7 +7,7 @@ It wrapped other libs like [SCS](https://github.com/alexedwards/scs), [Gorilla S
 ```go
 import (
 	"github.com/gorilla/sessions"
-	"github.com/qor/session/gorilla"
+	"github.com/bhojpur/cms/pkg/session/gorilla"
 	// "github.com/alexedwards/scs/engine/memstore"
 )
 

@@ -65,7 +65,7 @@ If you want to allow user create localized data directly, you can embeded `l10n.
 
 ```go
 type Product struct {
-  gorm.Model
+  orm.Model
   Name string
   Code string
   l10n.LocaleCreatable
@@ -78,7 +78,7 @@ Add the tag `l10n:"sync"` to the fields that you wish to always sync with the *g
 
 ```go
 type Product struct {
-  gorm.Model
+  orm.Model
   Name  string
   Code  string `l10n:"sync"`
   l10n.Locale

@@ -91,7 +91,7 @@ products // => []Product{
          //    }
 ```
 
-### Sorting GORM-backend Models
+### Sorting ORM-backend Models
 
 After enabling sorting modes for [Bhojpur ORM](https://github.com/bhojpur/orm) models, the [Admin](https://github.com/bhojpur/cms/pkg/admin) will automatically enable the sorting feature for the resource.
 

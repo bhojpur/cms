@@ -35,7 +35,7 @@ func TestGetDepVersionFromMod(t *testing.T) {
 		want string
 	}{
 		{view: "github.com/bhojpur/cms/pkg/l10n/views", want: "pkg/mod/github.com/bhojpur/cms/pkg/l10n@v0.0.1/views"},
-		{view: "github.com/bhojpur/cms/pkg/admin/views", want: "pkg/mod/github.com/bhojpur/cms/pkg/admin@v0.0.1/views"},
+		{view: "github.com/bhojpur/cms/pkg/admin/views", want: "pkg/mod/github.com/bhojpur/cms/pkg/admin@v0.0.2/views"},
 		{view: "github.com/bhojpur/cms/pkg/publish2/views", want: "pkg/mod/github.com/bhojpur/cms/pkg/publish2@v0.0.1/views"},
 		{view: "github.com/bhojpur/cms/pkg/media/media_library/views", want: "pkg/mod/github.com/bhojpur/cms/pkg/media@v0.0.1/media_library/views"},
 		{view: "github.com/bhojpur/cms/pkg/i18n/exchange_actions/views", want: "pkg/mod/github.com/bhojpur/cms/pkg/i18n@v0.0.1/exchange_actions/views"},

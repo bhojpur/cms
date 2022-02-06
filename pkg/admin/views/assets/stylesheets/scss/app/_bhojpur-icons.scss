@@ -1,0 +1,175 @@
+.bhojpur-icon__unread_count {
+    position: absolute;
+    top: 0;
+    right: 0;
+    border-radius: 100%;
+    width: 16px;
+    height: 16px;
+    text-align: center;
+    line-height: 16px;
+    z-index: 2;
+    font-size: 10px;
+    background-color: #ff4081;
+    color: #fff;
+  }
+  
+  [bhojpur-icon-name]{
+    > a, > span{
+      display: block;
+      padding: 0 20px 0 40px;
+      position: relative;
+      &::before,
+      &::after {
+        font-family: 'Material Icons';
+        font-weight: normal;
+        font-style: normal;
+        display: inline-block;
+        text-transform: none;
+        letter-spacing: normal;
+        word-wrap: normal;
+        word-break: normal;
+      
+        /* Support for all WebKit browsers. */
+        -webkit-font-smoothing: antialiased;
+        /* Support for Safari and Chrome. */
+        text-rendering: optimizeLegibility;
+      
+        /* Support for Firefox. */
+        -moz-osx-font-smoothing: grayscale;
+      
+        /* Support for IE. */
+        -webkit-font-feature-settings: 'liga';
+        -moz-font-feature-settings: 'liga';
+        font-feature-settings: 'liga';
+        -ms-font-feature-settings: 'liga';
+  
+        position: absolute;
+        width: 24px;
+        height: 24px;
+        font-size: 18px;
+        line-height: 24px;
+        text-align: center;
+        color: inherit;
+      }
+    }
+    &.mdl-menu__item{
+      padding: 0;
+    }
+  }
+  
+  [bhojpur-icon-name="Delete"] > a::before{
+    content: "\e872";
+  }
+  
+  [bhojpur-icon-name="Edit"]{
+    > a::before{
+      content: "\e254";
+    }
+  }
+  
+  [bhojpur-icon-name] > a, [bhojpur-icon-name] > span {
+    &::before,
+    &::after {
+      top: 50%;
+      margin-top: -12px;
+    }
+    &::before {
+      left: 8px;
+    }
+  
+    &::after {
+      right: 8px;
+      left: auto;
+    }
+  }
+  
+  [bhojpur-icon-name*="Dashboard"] > a::before {
+    content: "dashboard";
+    
+  }
+  
+  [bhojpur-icon-name*="Asset"] > a::before {
+    content: "\e2c7";
+  }
+  
+  [bhojpur-icon-name*="Product"] > a::before {
+    content: "\e1db";
+  }
+  
+  [bhojpur-icon-name*="Site"] > a::before {
+    content: "\e051";
+  }
+  
+  [bhojpur-icon-name*="Store"] > a::before {
+    content: "\e8d1";
+  }
+  
+  [bhojpur-icon-name*="Newsletter"] > a::before, [bhojpur-icon-name*="Email"] > a::before {
+    content: "\e0be";
+  }
+  
+  [bhojpur-icon-name*="Translate"] > a::before, [bhojpur-icon-name*="Translation"] > a::before {
+    content: "\e8e2";
+  }
+  
+  [bhojpur-icon-name*="Report"] > a::before, [bhojpur-icon-name*="Chart"] > a::before {
+    content: "\e24b";
+  }
+  
+  [bhojpur-icon-name*="Order"] > a::before {
+    content: "\e8cc";
+  }
+  
+  [bhojpur-icon-name*="User"] > a::before {
+    content: "\e7fd";
+  }
+  
+  [bhojpur-icon-name*="Translation"] > a::before {
+    content: "\e894";
+  }
+  
+  [bhojpur-icon-name*="Publish"] > a::before {
+    content: "\e255";
+  }
+  
+  [bhojpur-icon-name*="Setting"] > a::before {
+    content: "\e8b8";
+  }
+  
+  [bhojpur-icon-name*="Search"] > a::before,[bhojpur-icon-name*="Search"] > span::before {
+    content: "\e8b6";
+  }
+  
+  [bhojpur-icon-name*="Client Services"] > a::before {
+    content: "\e5c3";
+  }
+  
+  [bhojpur-icon-name*="Transaction Logs"] > a::before {
+    content: "\e889";
+  }
+  
+  [bhojpur-icon-name*="Notification"] > a::before {
+    content: "\e7f4";
+  }
+  
+  [bhojpur-icon-name*="Widget"] > a::before {
+    content: "\e30d";
+  }
+  
+  [bhojpur-icon-name*="Workers"] > a::before {
+    content: "\e8f9";
+  }
+  
+  [bhojpur-icon-name*="Public keys"] > a::before {
+    content: "\e897";
+  }
+  
+  [bhojpur-icon-name*="Pages Management"] > a::before {
+    content: "pending_actions";
+  }
+  
+  
+  
+  [bhojpur-icon-name] [bhojpur-icon-name] > a::before {
+    content: " " !important;
+  }

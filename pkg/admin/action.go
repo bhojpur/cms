@@ -52,7 +52,7 @@ type Action struct {
 	Permission  *roles.Permission
 }
 
-// Action register action for CMS resource
+// Action register action for Bhojpur CMS resource
 func (res *Resource) Action(action *Action) *Action {
 	for _, a := range res.actions {
 		if a.Name == action.Name {

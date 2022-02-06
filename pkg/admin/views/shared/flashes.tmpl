@@ -1,0 +1,11 @@
+{{range $flash := flashes}}
+<div class="bhojpur-alert bhojpur-alert--{{$flash.Type}} bhojpur-alert__active" data-dismissible="true" role="alert" data-type="{{$flash.Type}}">
+  <button type="button" class="mdl-button mdl-button--icon" data-dismiss="alert">
+    <i class="material-icons">close</i>
+  </button>
+
+  <span class="bhojpur-alert-message">
+    {{$flash.Message}}
+  </span>
+</div>
+{{end}}
