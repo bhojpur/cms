@@ -82,7 +82,7 @@ require (
 	github.com/garyburd/redigo v1.6.3 // indirect
 	github.com/go-sql-driver/mysql v1.6.0
 	github.com/gorilla/context v1.1.1
-	github.com/gorilla/sessions v1.2.0
+	github.com/gorilla/sessions v1.2.1
 	github.com/patrickmn/go-cache v2.1.0+incompatible // indirect
 	github.com/theplant/bimg v1.1.1
 	github.com/theplant/cldr v0.0.0-20190423050709-9f76f7ce4ee8
