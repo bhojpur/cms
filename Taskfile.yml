@@ -13,7 +13,9 @@ tasks:
         desc: Build the web application
         cmds:
         - GOFLAGS=-mod=mod go build -o bin/cmsctl client.go 
-        - GOFLAGS=-mod=mod go build -o bin/cmssvr server.go 
+        - GOFLAGS=-mod=mod go build -o bin/cmssvr server.go
+        - GOFLAGS=-mod=mod go run client.go template internal/demo 
+        - GOFLAGS=-mod=mod go build -o bin/cmsdemo internal/main.go 
 
     build-desktop:
         desc: Build the desktop application for current OS

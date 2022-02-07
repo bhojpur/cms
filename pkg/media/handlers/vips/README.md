@@ -20,7 +20,7 @@ RUN apk add --update build-base vips-dev
 
 set CGO_ENABLED=1, eg:
 ```
-GOOS=linux CGO_ENABLED=1 GOARCH=amd64 go build -tags 'bindatafs' -a -o main main.go
+GOOS=linux CGO_ENABLED=1 GOARCH=amd64 go build -tags 'template' -a -o main main.go
 ```
 
 ## Deploy Dockerfile
