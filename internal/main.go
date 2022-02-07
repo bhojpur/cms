@@ -44,27 +44,40 @@ type Product struct {
 }
 
 func main() {
+	fmt.Println("Configuring the Bhojpur CMS demo application views")
+	loginFS := demo.AssetFS.NameSpace("login")
+	pluginFS := demo.AssetFS.NameSpace("plugin")
+	// Register view paths into the loginFS
+	loginFS.RegisterPath("templates/app/views")
+	pluginFS.RegisterPath("templates/app/vendor/plugin/views")
+
+	// Compile application templates under registered view paths into binary
+	loginFS.Compile()
+	pluginFS.Compile()
+
+	fmt.Println("Configuring a Bhojpur CMS demo login templates")
+	// Get file content with registered name
+	loginContent, err := loginFS.Asset("login.html")
+	if err != nil {
+		fmt.Errorf("While configuring demo application login", err)
+	}
+	if loginContent != nil {
+		fmt.Println("Configuring a demo application login.html")
+	}
+
+	fmt.Println("Configuring a Bhojpur CMS demo plugin templates")
+	pluginContent, err := pluginFS.Asset("index.tmpl")
+	// Get file content with registered name
+	if err != nil {
+		fmt.Errorf("While configuring demo application plugin", err)
+	}
+	if pluginContent != nil {
+		fmt.Println("Configuring a demo application plugin.tmpl")
+	}
+
 	fmt.Println("Bhojpur CMS demo application server, opening SQL database")
 	demoAppDB, _ := orm.Open("sqlite3", "internal/demo.db")
 	demoAppDB.AutoMigrate(&User{}, &Product{})
-
-	fmt.Println("Configuring the Bhojpur CMS demo application views")
-	demoFS := demo.AssetFS
-	// Register view paths into the demoFS
-	demoFS.RegisterPath("app/views")
-	demoFS.RegisterPath("app/vendor/plugin/views")
-
-	// Compile application templates under registered view paths into binary
-	demoFS.Compile()
-
-	// Get file content with registered name
-	fileContent, ok := demoFS.Asset("internal/app/views/index.tmpl")
-	if ok != nil {
-		fmt.Errorf("While configuring demo application", ok)
-	}
-	if fileContent != nil {
-		fmt.Println("Configuring a demo home/index.html")
-	}
 
 	fmt.Println("Configuring a Bhojpur CMS administrator dashboard")
 	// Initialize Bhojpur CMS - Administrator's Dashboard
@@ -77,6 +90,7 @@ func main() {
 	fmt.Println("Configuring an HTTP service request multiplexer")
 	// initialize an HTTP request multiplexer
 	mux := http.NewServeMux()
+	mux.HandleFunc("/", landingPageFunc)
 
 	fmt.Println("Mounting administrator dashboard web user interface")
 	// Mount Bhojpur CMS - Administrator's web user interface to mux
@@ -84,6 +98,12 @@ func main() {
 
 	fmt.Println("Bhojpur CMS demo server listening at http://localhost:3000")
 	http.ListenAndServe(":3000", mux)
+}
+
+func landingPageFunc(w http.ResponseWriter, r *http.Request) {
+	w.WriteHeader(http.StatusOK)
+	_, _ = w.Write([]byte("<html><head><title>Bhojpur CMS</title></head><body><h1>Welcome to Bhojpur CMS</h1><p>Login to <a href=\"/admin\">Administrator's Dashboard</a></p><br/><br><hr size=\"1px\"><center>Copyright &copy; 2018 by <a href=\"https://www.bhojpur-consulting.com\">Bhojpur Consulting Private Limited</a>, India. All rights reserved.</center></body></html>"))
+
 }
 
 /*

@@ -40,7 +40,7 @@ var templateCmd = &cobra.Command{
 	Use:   "template",
 	Short: "To compile your application template files into Go source code",
 	Run: func(cmd *cobra.Command, args []string) {
-		exitAfterCompile := flag.Bool("exit-after-compile", true, "Exit after compiling templates")
+		exitAfterCompile := flag.Bool("exit-after-compile", false, "Exit after compiling application templates")
 		flag.Parse()
 
 		if len(args) == 0 {

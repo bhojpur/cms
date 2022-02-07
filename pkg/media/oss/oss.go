@@ -28,8 +28,8 @@ import (
 
 	"github.com/bhojpur/application/pkg/utils"
 	"github.com/bhojpur/cms/pkg/media"
-	"github.com/bhojpur/cms/pkg/media/filesystem"
 	oss "github.com/bhojpur/drive/pkg/model"
+	"github.com/bhojpur/drive/pkg/provider/filesystem"
 )
 
 var (

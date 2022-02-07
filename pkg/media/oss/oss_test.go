@@ -36,8 +36,8 @@ import (
 
 	"github.com/bhojpur/application/test/utils"
 	"github.com/bhojpur/cms/pkg/media"
+	oss "github.com/bhojpur/cms/pkg/media/oss"
 	cfgsvr "github.com/bhojpur/configure/pkg/markup"
-	oss "github.com/bhojpur/drive/pkg/model"
 	s3 "github.com/bhojpur/drive/pkg/provider/s3"
 	orm "github.com/bhojpur/orm/pkg/engine"
 )
