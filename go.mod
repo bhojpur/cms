@@ -3,7 +3,7 @@ module github.com/bhojpur/cms
 go 1.17
 
 require (
-	github.com/bhojpur/application v0.0.2
+	github.com/bhojpur/application v0.0.5
 	github.com/bhojpur/drive v0.0.4
 	github.com/bhojpur/middleware v0.0.1
 	github.com/bhojpur/session v0.0.2
@@ -67,7 +67,7 @@ require (
 
 require (
 	golang.org/x/net v0.0.0-20220127200216-cd36cc0744dd // indirect
-	golang.org/x/sys v0.0.0-20220128215802-99c3d69c2c27 // indirect
+	golang.org/x/sys v0.0.0-20220222200937-f2425489ef4c // indirect
 	google.golang.org/genproto v0.0.0-20220126215142-9970aeb2e350 // indirect
 	gopkg.in/yaml.v2 v2.4.0
 	k8s.io/utils v0.0.0-20220127004650-9b3446523e65 // indirect
@@ -89,7 +89,7 @@ require (
 	github.com/theplant/htmltestingutils v0.0.0-20190423050759-0e06de7b6967
 	github.com/theplant/testingutils v0.0.0-20190603093022-26d8b4d95c61
 	github.com/yosssi/gohtml v0.0.0-20201013000340-ee4748c638f4 // indirect
-	golang.org/x/crypto v0.0.0-20220128200615-198e4374d7ed // indirect
+	golang.org/x/crypto v0.0.0-20220214200702-86341886e292 // indirect
 	gopkg.in/bsm/ratelimit.v1 v1.0.0-20160220154919-db14e161995a // indirect
 	gopkg.in/redis.v3 v3.6.4
 	k8s.io/api v0.23.3 // indirect
