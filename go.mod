@@ -3,7 +3,7 @@ module github.com/bhojpur/cms
 go 1.17
 
 require (
-	github.com/bhojpur/application v0.0.2
+	github.com/bhojpur/application v0.0.6
 	github.com/bhojpur/drive v0.0.4
 	github.com/bhojpur/middleware v0.0.1
 	github.com/bhojpur/session v0.0.2
@@ -16,19 +16,27 @@ require (
 	github.com/spf13/cobra v1.3.0
 	google.golang.org/grpc v1.44.0
 	google.golang.org/protobuf v1.27.1
-	k8s.io/apimachinery v0.23.3
+	k8s.io/apimachinery v0.23.4
 	k8s.io/client-go v1.5.2
 )
 
 require (
-	cloud.google.com/go/compute v1.1.0 // indirect
-	github.com/aws/aws-sdk-go v1.42.39 // indirect
+	cloud.google.com/go/compute v1.5.0 // indirect
+	github.com/Microsoft/go-winio v0.5.2 // indirect
+	github.com/aws/aws-sdk-go v1.43.6 // indirect
 	github.com/aymerick/douceur v0.2.0 // indirect
 	github.com/bhojpur/errors v0.0.3 // indirect
 	github.com/bhojpur/token v0.0.1 // indirect
+	github.com/briandowns/spinner v1.18.1 // indirect
+	github.com/containerd/containerd v1.6.0 // indirect
 	github.com/davecgh/go-spew v1.1.1 // indirect
+	github.com/docker/distribution v2.8.0+incompatible // indirect
+	github.com/docker/docker v20.10.12+incompatible // indirect
+	github.com/docker/go-connections v0.4.0 // indirect
+	github.com/docker/go-units v0.4.0 // indirect
 	github.com/docker/spdystream v0.1.0 // indirect
 	github.com/go-logr/logr v1.2.2 // indirect
+	github.com/gocarina/gocsv v0.0.0-20211203214250-4735fba0c1d9 // indirect
 	github.com/gogo/protobuf v1.3.2 // indirect
 	github.com/golang/protobuf v1.5.2 // indirect
 	github.com/google/gofuzz v1.2.0 // indirect
@@ -36,6 +44,8 @@ require (
 	github.com/gorilla/css v1.0.0 // indirect
 	github.com/gorilla/securecookie v1.1.1 // indirect
 	github.com/gosimple/unidecode v1.0.1 // indirect
+	github.com/hashicorp/go-cleanhttp v0.5.2 // indirect
+	github.com/hashicorp/go-retryablehttp v0.5.3 // indirect
 	github.com/imdario/mergo v0.3.12 // indirect
 	github.com/inconshreveable/mousetrap v1.0.0 // indirect
 	github.com/jmespath/go-jmespath v0.4.0 // indirect
@@ -43,21 +53,25 @@ require (
 	github.com/kr/pretty v0.3.0 // indirect
 	github.com/mattn/go-colorable v0.1.12 // indirect
 	github.com/mattn/go-isatty v0.0.14 // indirect
-	github.com/microcosm-cc/bluemonday v1.0.17 // indirect
+	github.com/mattn/go-runewidth v0.0.13 // indirect
+	github.com/microcosm-cc/bluemonday v1.0.18 // indirect
 	github.com/modern-go/concurrent v0.0.0-20180306012644-bacd9c7ef1dd // indirect
 	github.com/modern-go/reflect2 v1.0.2 // indirect
-	github.com/onsi/ginkgo v1.12.0 // indirect
-	github.com/onsi/gomega v1.7.1 // indirect
+	github.com/nightlyone/lockfile v1.0.0 // indirect
+	github.com/olekukonko/tablewriter v0.0.5 // indirect
+	github.com/opencontainers/go-digest v1.0.0 // indirect
+	github.com/opencontainers/image-spec v1.0.2 // indirect
+	github.com/pkg/errors v0.9.1 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
+	github.com/rivo/uniseg v0.2.0 // indirect
 	github.com/rogpeppe/go-internal v1.8.0 // indirect
 	github.com/spf13/pflag v1.0.5 // indirect
 	golang.org/x/image v0.0.0-20191009234506-e7c1f5e7dbb8 // indirect
-	golang.org/x/oauth2 v0.0.0-20211104180415-d3ed0bb246c8 // indirect
+	golang.org/x/oauth2 v0.0.0-20220223155221-ee480838109b // indirect
 	golang.org/x/term v0.0.0-20210927222741-03fcf44c2211 // indirect
 	golang.org/x/text v0.3.7 // indirect
-	golang.org/x/time v0.0.0-20211116232009-f0f3c7e86c11 // indirect
+	golang.org/x/time v0.0.0-20220224211638-0e9765cccd65 // indirect
 	google.golang.org/appengine v1.6.7 // indirect
-	gopkg.in/check.v1 v1.0.0-20201130134442-10cb98267c6c // indirect
 	gopkg.in/inf.v0 v0.9.1 // indirect
 	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b // indirect
 	k8s.io/klog/v2 v2.40.1 // indirect
@@ -66,11 +80,11 @@ require (
 )
 
 require (
-	golang.org/x/net v0.0.0-20220127200216-cd36cc0744dd // indirect
-	golang.org/x/sys v0.0.0-20220128215802-99c3d69c2c27 // indirect
-	google.golang.org/genproto v0.0.0-20220126215142-9970aeb2e350 // indirect
+	golang.org/x/net v0.0.0-20220225172249-27dd8689420f // indirect
+	golang.org/x/sys v0.0.0-20220227234510-4e6760a101f9 // indirect
+	google.golang.org/genproto v0.0.0-20220228195345-15d65a4533f7 // indirect
 	gopkg.in/yaml.v2 v2.4.0
-	k8s.io/utils v0.0.0-20220127004650-9b3446523e65 // indirect
+	k8s.io/utils v0.0.0-20220210201930-3a6ce19ff2f9 // indirect
 )
 
 require (
@@ -89,10 +103,10 @@ require (
 	github.com/theplant/htmltestingutils v0.0.0-20190423050759-0e06de7b6967
 	github.com/theplant/testingutils v0.0.0-20190603093022-26d8b4d95c61
 	github.com/yosssi/gohtml v0.0.0-20201013000340-ee4748c638f4 // indirect
-	golang.org/x/crypto v0.0.0-20220128200615-198e4374d7ed // indirect
+	golang.org/x/crypto v0.0.0-20220214200702-86341886e292 // indirect
 	gopkg.in/bsm/ratelimit.v1 v1.0.0-20160220154919-db14e161995a // indirect
 	gopkg.in/redis.v3 v3.6.4
-	k8s.io/api v0.23.3 // indirect
+	k8s.io/api v0.23.4 // indirect
 )
 
 replace k8s.io/api => k8s.io/api v0.20.4
